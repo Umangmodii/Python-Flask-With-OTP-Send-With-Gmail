@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify OTP</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Optional custom CSS styles for the form */
+        .container {
+            padding-top: 50px;
+        }
+        .form-box {
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form-box">
+                    <h3 class="mb-4">Verify Your OTP</h3>
+                    <form method="POST" action="/verify/{{ email }}">
+                        <div class="form-group">
+                            <label for="otp">OTP:</label>
+                            <input type="text" class="form-control" id="otp" name="otp" required>
+                            <input type="hidden" name="email" value="{{ session.email }}">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block">Verify OTP</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
